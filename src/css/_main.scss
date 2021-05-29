@@ -1,0 +1,166 @@
+/**********************
+Global Styles
+**********************/
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/** Fixing bootstrap columns for safari **/
+
+.row:after,
+.row:before {
+  display: inline-block !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @include body;
+  letter-spacing: 0;
+  overflow-x: hidden;
+}
+
+button {
+  border: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+a,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: $link-hover-decoration;
+  outline: 0;
+}
+
+section {
+  padding: $section-padding-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.container {
+  max-width: 1992px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin: 0 -15px;
+}
+
+.section-title {
+  @include section-title;
+}
+
+.sub-heading,
+.top-heading {
+  @include sub-heading;
+}
+
+.img-fluid {
+  max-width: 100%;
+}
+
+.img-container {
+  text-align: center;
+}
+
+.sale-text {
+  @include sale;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Buttons */
+
+.btn-prime,
+.btn-prime:link,
+.btn-prime:visited {
+  @include base-btn;
+}
+
+.btn-prime:hover {
+  opacity: 0.9;
+}
+
+.btn-prime-dark,
+.btn-prime-dark:focus,
+.btn-prime-dark:hover {
+  @include button-dark;
+}
+
+.btn-prime-border,
+.btn-prime-border:focus,
+.btn-prime-border:hover {
+  @include button-border;
+}
+
+.flex-container {
+  @include flex-row-centered;
+}
+
+.cta-container {
+  .btn-prime {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    text-align: left;
+
+    span {
+      svg {
+        &:hover {
+          fill: $black;
+        }
+      }
+    }
+
+    svg {
+      overflow: initial;
+      max-width: 20px;
+      &:hover {
+        fill: $black;
+      }
+    }
+
+    &:hover {
+      background-color: $white;
+      border-color: $white;
+      color: $black;
+    }
+  }
+}
